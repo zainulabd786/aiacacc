@@ -2650,9 +2650,9 @@
 	   				$mobile = $row['mobile'];
 	   				//echo $mobile."--->".$msg."<br/>";
 	   				if(!empty($mobile) AND !empty($msg)){
-						$parampro['uname'] = "aiacacc";
-						$parampro['password'] = "123456";
-						$parampro['sender'] = "AIACAC";
+						$parampro['uname'] = "XXXXXX";
+						$parampro['password'] = "XXXXXX";
+						$parampro['sender'] = "XXXXXX";
 						$parampro['receiver'] = $mobile;     
 						$parampro['route'] = "TA";
 						$parampro['msgtype'] = "1";
@@ -2682,9 +2682,9 @@
 	   				$mobile = $row['mobile'];
 	   				//echo $mobile."--->".$msg."<br/>";
 	   				if(!empty($mobile) AND !empty($msg)){
-						$parampro['uname'] = "aiacacc";
-						$parampro['password'] = "123456";
-						$parampro['sender'] = "AIACAC";
+						$parampro['uname'] = "XXXXXX";
+						$parampro['password'] = "XXXXXX";
+						$parampro['sender'] = "XXXXXX";
 						$parampro['receiver'] = $mobile;     
 						$parampro['route'] = "TA";
 						$parampro['msgtype'] = "1";
@@ -2712,9 +2712,9 @@
 				$mobile = $to[$i];
 				//echo $mobile."--->".$msg."<br/>";
 				if(!empty($mobile) AND !empty($msg)){
-					$parampro['uname'] = "aiacacc";
-					$parampro['password'] = "123456";
-					$parampro['sender'] = "AIACAC";
+					$parampro['uname'] = "XXXXXX";
+					$parampro['password'] = "XXXXXX";
+					$parampro['sender'] = "XXXXXX";
 					$parampro['receiver'] = $mobile;     
 					$parampro['route'] = "TA";
 					$parampro['msgtype'] = "1";
