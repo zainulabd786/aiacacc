@@ -1,0 +1,758 @@
+body{
+	background-color: #F1F1F1;
+	padding: 20px;
+}
+input:read-only, input[type="text"]:disabled{
+	cursor: not-allowed;
+}
+.loading-gif{
+	width: 10%;
+}
+.main-login-background{
+	background-image: url(images/login.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.panel-danger>.panel-heading{
+	background-color: #C9302C;
+	color: #fff;
+}
+.panel-success>.panel-heading{
+	background-color: #4CAF50;
+	color: #fff;
+}
+.panel-success {
+    border-color: #4CAF50;
+}
+.panel-danger {
+    border-color: #C9302C;
+}
+center{
+	padding-top: 350px;
+}
+.credential-container{
+	height: auto;
+    width: 40%;
+    color: #ffffff;
+    position: relative;
+	color: #000;
+}
+.menu-container{
+	height: 20px;
+	border-bottom: 1px solid;
+	background-color: #ffffff;
+	margin: -20px;
+	list-style-type: none;
+	position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.menu-container ul li{
+	display: inline;
+}
+.menu-container ul li{
+	padding: 8px;
+}
+.menu-container ul:first-child{
+	padding-left: 0;
+}
+.menu-container a{
+	color: #000;
+	padding: 2px;
+	font-size: 13px;
+}
+.menu-container a:hover{
+	text-decoration: none;
+	background-color: #9dc7f9;
+}
+.voucher-prev .main-heading{
+	font-size: 35px;
+}
+.single-name-row{
+	width: 100%;
+	padding: 10px;
+	margin-left: 0px;
+}
+.single-name-row:hover, .contact-row:hover{
+	background-color: grey;
+	color: #ffffff;
+	cursor: pointer;
+}
+.name-resp-cont table, table td{
+	border: none;
+}
+.name-resp-cont, .contacts-suggestions{
+	box-shadow: 10px 5px 30px -5px;
+	position: absolute;
+	background: ivory;
+    max-width: 100%;
+    min-width: 66.5%;
+	top: 35px;
+	left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.contacts-suggestions{
+	top: 180px;
+    left: 46px;
+    width: 87.5%;
+}
+.voucher .name-resp-cont{
+	top: 204px;
+	left: 45px;
+	width: 84%;
+}
+.main-heading{
+	font-weight:900 !important;
+	font-family: 'Oswald', sans-serif !important;
+	font-size: 30px;
+}
+.prev p, .voucher-prev p{
+	font-size:9px;
+}
+
+.rec{
+	height: 103px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0px 7px 0px 0px !important;
+}
+.rec p:nth-child(2){
+	font-size: 24px;
+    margin: 0;
+    position: relative;
+	width: 100%;
+}
+.blanks{
+	display: inline-flex;
+	height: 40px;
+	font-size: 17px;
+	width: 100%;
+}
+.blanks strong, .blanks input {
+	border-bottom: 2px dotted;
+	height: 20px;
+	width: 100%;
+}
+.rupee-sym{
+	background-color: #ffffff !important;
+    color: #000000 !important;
+    width: 30%;
+    float: left;
+    border-radius: 0 50% 50% 0;
+    text-align: center;
+    font-size: 39px;
+    height: 50px;
+}
+.rupee-amt{
+	width: 70%;
+    float: right;
+    padding: 10px;
+    font-size: 25px;
+}
+.date-label{
+	height:20px;
+	background-color:#000000 !important;
+	color:#ffffff !important;
+}
+.amt{
+    border: 2px solid;
+    border-radius: 10px !important;
+    height: 60px;
+	padding: 0;
+	min-width: 150px;
+	font-weight: 900;
+}
+.bank-det{
+	float:left;
+	padding-left: 60px;
+}
+table{
+	width: 100%;
+	border-collapse: separate;
+}
+td{
+	border: 1px solid;
+	padding: 5px;
+}
+table tr:nth-child(even) {
+    background-color: #E8EEF1;
+}
+.person-details table tr{
+	background-color: #fff;
+}
+
+.exp-mem .panel-body table tr{
+	color: #F44336;
+}
+.rec-added-mem .panel-body table tr{
+	color: #4CAF50;
+}
+
+.single-row:hover, .rec-added-mem .panel-body table tr:hover, .exp-mem .panel-body table tr:hover, .single-search-row:hover, .single-row:hover, .single-person-row-expd:hover{
+	background-color: grey;
+	color: #ffffff;
+	cursor: pointer;
+}
+.prev input{
+	border: none;
+	border-bottom: 2px dotted;
+	height: 20px;
+	font-weight: 700;
+	background: transparent;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.card{
+	border: 1px solid;
+	height: 160px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 25px 0px #000000;
+	padding: 10px;
+	font-size: 28px;
+	text-align: center;
+	margin: 20px 20px 20px 20px;
+	width: 22.2%;
+}
+.card:hover{
+	border: 2px solid;
+	box-shadow: 5px 5px 12px 0px #000000;
+}
+.card .sym .fa{
+	font-size: 145px;
+}
+.card .sym{
+	width: 40%;
+    float: right;
+    height: 100%;
+    text-align: center;
+}
+.num-head{
+	width: 60%;
+	height: 100%;
+	float: left;
+}
+.card .num, .card .head{
+	width: 100%;
+	height: 50%;
+	padding-top: 15px;
+}
+.card .num{
+	font-weight: 900;
+}
+
+.exp-mem .panel-body, .rec-added-mem .panel-body, .expired-members .panel-body{
+	max-height: 295px;
+	height: 295px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0;
+}
+.rec-added-mem .panel-body{
+	max-height: 235px;
+}
+.income-card, .expenxse-card{
+	width: 47.2%
+}
+.card .sym .fa-bank{
+    font-size: 115px; 
+    padding-top: 10px
+ }
+
+.b1 div{
+	width: 30%;
+}
+.b1 .d2{
+	width: 5%;
+}
+.b1 .name{
+	width: 70%;
+	font-size: 20px;
+	height: 24px;
+}
+
+.b3 div{
+	width: 7%;
+}
+.b3 .add2{
+	width: 47.5%;
+}
+.b3 .state{
+	width: 20%;
+}
+.b3 .s2{
+	width: 22%;
+}
+.b3 .s3{
+	width: 30%;
+}
+
+.b4 .d2{
+	width: 10%;
+}
+.b4 .s2{
+	width: 30%;
+}
+.b5 div{
+	width: 55%;
+}
+.b5 strong, .b5 input{
+	width: 30%;
+}
+.b5 .d2{
+	width: 2%;
+}
+.b5 .s2{
+	width: 70%;
+}
+
+.b6 div{
+	width: 69%;
+}
+.b6 strong, .b6 input{
+	width: 61%;
+}
+.b6 .s2{
+	width: 25%;
+}
+
+.b7 div{
+	width: 22%;
+}
+.b7 .d2{
+	width: 6%;
+}
+.b7 strong, .b7 input{
+	width: 30%;
+}
+.b7 .mop{
+	width: 10%;
+}
+.b7 .d3{
+	width: 10%;
+}
+/*.b8 div{
+	width: 16%;
+}
+.b8 {
+	width: 60%;
+}
+.b8 .d2{
+	width:32%;
+}
+.b8 .mop{
+	width:auto;
+	margin-right: 2px;
+}*/
+.prev{
+	background-image: url("images/logo.png") !important;
+	background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.tab-head td{
+	background-color: #000000!important;
+	color: #ffffff!important;
+}
+.rec-det .date .dash{
+	border-bottom: 2px dotted;
+	width: 85%;
+	float: right;
+	padding: 7px;
+	text-align: center;
+}
+.rec-det .vno .dash{
+	border-bottom: 2px dotted;
+	width: 65%;
+	float: right;
+	text-align: center;
+	height: 25px;
+}
+.rec-det .date{
+	width: 30%;
+    display: flex;
+    height: 34px;
+    font-size: 20px;
+}
+.rec-det .vno{
+	width: 30%;
+    display: flex;
+    height: 34px;
+    font-size: 20px;
+    padding-top: 7px;
+}
+.rec-det .mop{
+	width: 100%;
+    border: 2px solid;
+    border-radius: 10px;
+    display: inline-flex;
+    padding: 10px;
+}
+.rec-det{
+	width: 100%;
+	display: inline-flex;
+}
+.cmark, .chmark{
+	height: 25px;
+	width: 25px;
+	border: 2px solid;
+	font-size: 20px;
+}
+.cash, .cheque{
+	width: 50%;
+	padding: 3px 0 0 10px;
+}
+.voucher-main .d{
+	border-bottom: 2px dotted;
+	width: 100%;
+	padding-top: 10px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+.vb1 .cname{
+	width: 25%;
+}
+.vb6 .cno{
+	width: 30%;
+}
+.vb{
+	display: inline-flex;
+	width: 100%;
+	height: 30px;
+}
+.lb{
+	padding-top: 10px;
+}
+.left-top{
+	border-bottom: 2px solid;
+	padding-bottom: 10px;
+}
+.voucher-main .left-bottom .d{
+	height: 27px;
+}
+.voucher-main .amt-words .d{
+	height: 25px;
+}
+.voucher-main .amount-dig{
+	border: 2px solid;
+	border-radius: 10px;
+	height: 50px;
+	font-size: 30px;
+}
+.voucher-main .amount .amount-dig{
+	display: inline-flex;
+	width: 100%;
+    padding: 15px;
+    height: 70px;
+}
+.voucher-main .amount{
+	padding-bottom: 10px;
+}
+.voucher-main .right{
+	padding: 20px;
+}
+.voucher-main .dig{
+	width: 100%;
+    text-align: center;
+    font-weight: 900;
+}
+.voucher-main .sym{
+	font-size: 50px;
+	margin-top: -13px;
+    margin-left: 15px;
+}
+.voucher-main .vrec, .voucher-main .prep{
+	height: 85px;
+	border: 2px solid;
+	text-align: center;
+	margin-top: 15px;
+}
+#voucher .panel-body{
+	padding: 30px;
+	padding-bottom: 0;
+}
+.voucher-main .prep{
+	float: right;
+	width: 48%;
+}
+.voucher-main .vrec{
+	float: left;
+	width: 48%;
+}
+.doc-head u{
+	font-size: 20px;
+}
+.voucher-main .amount .amt-words .d{
+	padding-top: 5px;
+	line-height: 24px;
+}
+.transactions-menu{
+	width: 41%;
+	height: 50px;
+	float: right;
+	padding: 6px;
+}
+.transactions-menu .print-ico, .transactions-menu .search-ico{
+	float: right;
+}
+.transactions-menu .print-ico:hover, .transactions-menu .search-ico:hover{
+	cursor: pointer;
+	zoom: 110%;
+}
+.transactions-menu .fa{
+	padding: 0 5px 0 5px;
+}
+.trans-search-bar{
+	width: 35%;
+	height: 50px;
+	padding: 6px;
+	float: right;
+	display: none;
+}
+.statement-header{
+	display: none;
+	width:100%;
+	text-align:center;
+	display: none;
+}
+.search-bar-input{
+	width: 30%;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+}
+.input-suggestions{
+	position: absolute;
+	top: 55px;
+	left: 300px;
+	border: 1px solid;
+	width: 30%;
+	background-color: #fff;
+    box-shadow: 1px 1px 10px 1px #000;
+}
+.upload-section{
+	display: flex;
+	border: 1px solid;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+.panel{
+	box-shadow: 5px 5px 20px 0px #000;
+}
+.statement-header .main-heading{
+	font-size: 25px!important;
+	font-family: Impact, Charcoal, sans-serif;
+}
+.transactions a{
+	color: #000;
+}
+.col-print-1 {width:8%;  float:left;}
+.col-print-2 {width:16%; float:left;}
+.col-print-3 {width:25%; float:left;}
+.col-print-4 {width:33%; float:left;}
+.col-print-5 {width:42%; float:left;}
+.col-print-6 {width:50%; float:left;}
+.col-print-7 {width:58%; float:left;}
+.col-print-8 {width:66%; float:left;}
+.col-print-9 {width:75%; float:left;}
+.col-print-10{width:83%; float:left;}
+.col-print-11{width:92%; float:left;}
+.col-print-12{width:100%; float:left;}
+@media only screen and (max-width: 1280px) {
+    .card{
+    	width: 21.2%;
+    	font-size: 22px;
+    }
+    .card .sym .fa-bank{
+    	font-size: 90px;
+    	padding-top: 20px;
+    }
+    .don-card .sym .fa-gift{
+    	font-size: 110px;
+    }
+	.income-card, .expenxse-card{
+		width: 46.2%
+	}
+}
+@media only screen and (max-width: 1370px) {
+    .card{
+    	width: 21.7%;
+    	font-size: 22px;
+    }
+    .card .sym .fa-bank{
+    	font-size: 100px;
+    }
+    .don-card .sym .fa-gift{
+    	font-size: 120px;
+    }
+	.income-card, .expenxse-card{
+		width: 46.2%
+	}
+}
+@media print{
+	.rupee-sym{
+		height: 42px;
+	}
+	.prev p, .voucher-prev p{
+		font-size: 9px;
+	}
+	.main-heading{
+		font-size: 30px;
+	}
+	.statement-header .main-heading{
+		font-size: 30px!important;
+		font-family: Impact, Charcoal, sans-serif;
+	}
+	.b1 div{
+		width: 33%;
+	}
+	.b1 .d2{
+		width: 4%;
+	}
+
+	.b3 .s3{
+		width: 25%;
+	}
+	.b3 div{
+		width: 9%;
+	}
+	.b4 div{
+		width: 10%;
+	}
+	.b4 .d2{
+		width: 11%;
+	}
+
+	.b5 div{
+		width: 55%;
+	}
+	.b5 .upto{
+		width: 70%;
+	}
+	.b5 .d2{
+		width: 2%;
+	}
+
+	.b6 div{
+		width: 70%;
+	}
+	.b6 strong, .b6 input{
+		width: 60%;
+	}
+	.b6 .s2{
+		width: 25%;
+	}
+
+	/*.b7 div{
+		widows: 25%;
+		margin-left: -4px;
+	}
+	.b7 .d2{
+		width: 100%;
+	}
+	.b7 strong, .b7 input{
+		width: 25%;
+	}
+	.b7 .mop{
+		width: 10%;
+	}
+
+	.b8 div{
+		width: 20%;
+	}*/
+	.blanks{
+		height: 34px;
+	}
+	.prev{
+		/*height: 4.9in;*/
+		border: 2px solid;
+		padding: 5px;
+		border-radius: 10px;
+	}
+
+	.prev:first-child{
+		margin-bottom: 70px;
+		margin-top: 30px;
+	}
+	.prev, .tab-head, .voucher-prev, .tab-head{
+	    -webkit-print-color-adjust: exact !important;
+	}
+	.vb{
+		height: 25px;
+	}
+	.voucher-main .amount .amount-dig{
+		height: 25px;
+	}
+	.voucher-main .d{
+		padding-top: 5px;
+	}
+	.voucher-main .amount, .left-top{
+		padding-bottom: 5px;
+	}
+	.voucher-main .amount .amount-dig{
+		height: 60px;
+		padding: 10px;
+	}
+	.voucher-prev .main-heading{
+		font-size: 30px;
+	}
+	.rec-det .vno .dash{
+		width: 55%;
+	}
+	.vb1 .cname {
+   		 width: 25%;
+	}
+	.vb6 .cno {
+	    width: 35%;
+	}
+	.voucher-prev .vno{
+		width: 40%;
+	}
+	.rec-det .mop{
+		padding: 5px;
+	}
+	@page{
+		size: 8.268in 11.493in;
+		size: A4;
+		margin: 0;
+		overflow: hidden;
+	}
+	.voucher-prev{
+		padding: 20px;
+		border: 2px solid;
+		border-radius: 10px;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+	table td{
+		border: 1px solid #000;
+		font-size: 10px !important;
+	}
+	.tab-head td{
+		color: #fff!important;
+		background-color: #000 !important;
+		font-weight: 900;
+	}
+	.statement-header, .main-heading{
+		display: block!important;
+	}
+}

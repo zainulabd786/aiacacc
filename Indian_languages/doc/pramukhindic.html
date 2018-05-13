@@ -1,0 +1,3380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: PramukhIndic</title>
+	<style>
+		
+		html
+		{
+			overflow: auto;
+			background-color: #fff;
+			font-size: 14px;
+		}
+
+		body
+		{
+			font-family: 'Open Sans', sans-serif;
+			line-height: 1.5;
+			color: #4d4e53;
+			background-color: white;
+		}
+
+		a, a:visited, a:active {
+			color: #0095dd;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		header
+		{
+			display: block;
+			padding: 0px 4px;
+		}
+
+		tt, code, kbd, samp {
+			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+		}
+
+		.class-description {
+			font-size: 130%;
+			line-height: 140%;
+			margin-bottom: 1em;
+			margin-top: 1em;
+		}
+
+		.class-description:empty {
+			margin: 0;
+		}
+
+		#main {
+			float: left;
+			width: 70%;
+		}
+
+		article dl {
+			margin-bottom: 40px;
+		}
+
+		section
+		{
+			display: block;
+			background-color: #fff;
+			padding: 12px 24px;
+			border-bottom: 1px solid #ccc;
+			margin-right: 30px;
+		}
+
+		.variation {
+			display: none;
+		}
+
+		.signature-attributes {
+			font-size: 60%;
+			color: #aaa;
+			font-style: italic;
+			font-weight: lighter;
+		}
+
+		nav
+		{
+			display: block;
+			float: right;
+			margin-top: 28px;
+			width: 30%;
+			box-sizing: border-box;
+			border-left: 1px solid #ccc;
+			padding-left: 16px;
+		}
+
+		nav ul {
+			font-family: 'Lucida Grande', 'Lucida Sans Unicode', arial, sans-serif;
+			font-size: 100%;
+			line-height: 17px;
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+		}
+
+		nav ul a, nav ul a:visited, nav ul a:active {
+			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+			line-height: 18px;
+			color: #4D4E53;
+		}
+
+		nav h3 {
+			margin-top: 12px;
+		}
+
+		nav li {
+			margin-top: 6px;
+		}
+
+		footer {
+			display: block;
+			padding: 6px;
+			margin-top: 12px;
+			font-style: italic;
+			font-size: 90%;
+		}
+
+		h1, h2, h3, h4 {
+			font-weight: 200;
+			margin: 0;
+		}
+
+		h1
+		{
+			font-family: 'Open Sans Light', sans-serif;
+			font-size: 48px;
+			letter-spacing: -2px;
+			margin: 12px 24px 20px;
+		}
+
+		h2, h3.subsection-title
+		{
+			font-size: 30px;
+			font-weight: 700;
+			letter-spacing: -1px;
+			margin-bottom: 12px;
+		}
+
+		h3
+		{
+			font-size: 24px;
+			letter-spacing: -0.5px;
+			margin-bottom: 12px;
+		}
+
+		h4
+		{
+			font-size: 18px;
+			letter-spacing: -0.33px;
+			margin-bottom: 12px;
+			color: #4d4e53;
+		}
+
+		h5, .container-overview .subsection-title
+		{
+			font-size: 120%;
+			font-weight: bold;
+			letter-spacing: -0.01em;
+			margin: 8px 0 3px 0;
+		}
+
+		h6
+		{
+			font-size: 100%;
+			letter-spacing: -0.01em;
+			margin: 6px 0 3px 0;
+			font-style: italic;
+		}
+
+		table
+		{
+			border-spacing: 0;
+			border: 0;
+			border-collapse: collapse;
+		}
+
+		td, th
+		{
+			border: 1px solid #ddd;
+			margin: 0px;
+			text-align: left;
+			vertical-align: top;
+			padding: 4px 6px;
+			display: table-cell;
+		}
+
+		thead tr
+		{
+			background-color: #ddd;
+			font-weight: bold;
+		}
+
+		th { border-right: 1px solid #aaa; }
+		tr > th:last-child { border-right: 1px solid #ddd; }
+
+		.ancestors { color: #999; }
+		.ancestors a
+		{
+			color: #999 !important;
+			text-decoration: none;
+		}
+
+		.clear
+		{
+			clear: both;
+		}
+
+		.important
+		{
+			font-weight: bold;
+			color: #950B02;
+		}
+
+		.yes-def {
+			text-indent: -1000px;
+		}
+
+		.type-signature {
+			color: #aaa;
+		}
+
+		.name, .signature {
+			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+		}
+		
+		.pro {
+			border-radius: 5px;
+			background-color: #1876D2;
+			color: white;
+			padding:5px;
+		}
+
+		.details { margin-top: 14px; border-left: 2px solid #DDD; }
+		.details dt { width: 120px; float: left; padding-left: 10px;  padding-top: 6px; }
+		.details dd { margin-left: 70px; }
+		.details ul { margin: 0; }
+		.details ul { list-style-type: none; }
+		.details li { margin-left: 30px; padding-top: 6px; }
+		.details pre.prettyprint { margin: 0 }
+		.details .object-value { padding-top: 0; }
+
+		.description {
+			margin-bottom: 1em;
+			margin-top: 1em;
+		}
+
+		.code-caption
+		{
+			font-style: italic;
+			font-size: 107%;
+			margin: 0;
+		}
+
+		.prettyprint
+		{
+			border: 1px solid #ddd;
+			width: 80%;
+			overflow: auto;
+		}
+
+		.prettyprint.source {
+			width: inherit;
+		}
+
+		.prettyprint code
+		{
+			font-size: 100%;
+			line-height: 18px;
+			display: block;
+			padding: 4px 12px;
+			margin: 0;
+			background-color: #fff;
+			color: #4D4E53;
+		}
+
+		.prettyprint code span.line
+		{
+		  display: inline-block;
+		}
+
+		.prettyprint.linenums
+		{
+		  padding-left: 70px;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		.prettyprint.linenums ol
+		{
+		  padding-left: 0;
+		}
+
+		.prettyprint.linenums li
+		{
+		  border-left: 3px #ddd solid;
+		}
+
+		.prettyprint.linenums li.selected,
+		.prettyprint.linenums li.selected *
+		{
+		  background-color: lightyellow;
+		}
+
+		.prettyprint.linenums li *
+		{
+		  -webkit-user-select: text;
+		  -moz-user-select: text;
+		  -ms-user-select: text;
+		  user-select: text;
+		}
+
+		.params .name, .props .name, .name code {
+			color: #4D4E53;
+			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+			font-size: 100%;
+		}
+
+		.params td.description > p:first-child,
+		.props td.description > p:first-child
+		{
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		.params td.description > p:last-child,
+		.props td.description > p:last-child
+		{
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+
+		.disabled {
+			color: #454545;
+		}
+
+	</style>
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: PramukhIndic</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>PramukhIndic</h2>
+        
+            <div class="class-description">PramukhIndic class contains the phonetic keyboard layout for Indian languages. It can be used with <a href="pramukhime.html">PramukhIME</a> to enable IME functionality for Indian languages on the webpage. It can also be used as a stand alone class to convert English transliteration text into Indian languages. This class supports Assamese, Bengali, Bodo, Dogri, Gujarati, Hindi, Kannada, Kashmiri, Konkani, Maithili, Malayalam, Manipuri, Marathi (Devanagari + Modi), Meitei, Nepali, Odia, Punjabi, Sanskrit, Santali (Ol Chiki), Sindhi, Sora, Tamil and Telugu languages.<br /><br /><strong>Features</strong><ul><li>This library converts the English text into the Unicode and can be used as a transliteration tool</li><li>Optionally, digits can be kept in English and all other text can be converted into the selected language</li><li>Powerful rule engine enhances transliteration experience</li><li>For Hindi, Kannada and Kashmiri, user can set preference for typing Anusvar or Panchamakshar</li></ul><br /><strong>Defaults</strong><br />For all languages, DigitInEnglish = false so all the digits will be converted into the selected language<br />Default language is Hindi<br /><br /><table><thead><tr><td>Language</td><td>Internal Name</td><td>Default Typing Rule</td><td>Available Typing Rules</td></tr></thead><tbody><tr><td>Assamese</td><td>assamese</td><td></td><td></td></tr><tr><td>Bengali</td><td>bengali</td><td></td><td></td></tr><tr><td>Bodo</td><td>bodo</td><td></td><td></td></tr><tr><td>Dogri</td><td>dogri</td><td></td><td></td></tr><tr><td>Gujarati</td><td>gujarati</td><td></td><td></td></tr><tr><td>Hindi</td><td>hindi</td><td>anusvar</td><td>anusvar, panchamakshar</td></tr><tr><td>Kannada</td><td>kannada</td><td>anusvar</td><td>anusvar, panchamakshar</td></tr><tr><td>Kashmiri</td><td>kashmiri</td><td>anusvar</td><td>anusvar, panchamakshar</td></tr><tr><td>Konkani</td><td>konkani</td><td></td><td></td></tr><tr><td>Maithili</td><td>maithili</td><td></td><td></td></tr><tr><td>Malayalam</td><td>malayalam</td><td></td><td></td></tr><tr><td>Manipuri</td><td>manipuri</td><td></td><td></td></tr><tr><td>Marathi</td><td>marathi</td><td></td><td></td></tr><tr><td>Marathi (Modi)</td><td>marathimodi</td><td></td><td></td></tr><tr><td>Meitei</td><td>meitei</td><td></td><td></td></tr><tr><td>Nepali</td><td>nepali</td><td></td><td></td></tr><tr><td>Odia</td><td>odia</td><td></td><td></td></tr><tr><td>Punjabi</td><td>punjabi</td><td></td><td></td></tr><tr><td>Sanskrit</td><td>sanskrit</td><td></td><td></td></tr><tr><td>Santali (Ol Chiki)</td><td>santali</td><td></td><td></td></tr><tr><td>Sindhi</td><td>sindhi</td><td></td><td></td></tr><tr><td>Sora</td><td>sora</td><td></td><td></td></tr><tr><td>Tamil</td><td>tamil</td><td></td><td></td></tr><tr><td>Telugu</td><td>telugu</td><td></td><td></td></tr></tbody></table></div>
+        
+    
+</header>
+
+<article>
+
+			<h3 class="subsection-title">Summary</h3>
+			<table class="params">
+				<thead>
+					<tr>
+						 <th class="last">Constructor</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span class="type-signature"></span>new PramukhIndic<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span>
+
+
+</td>
+					</tr>
+				</tbody>
+			</table>
+			<br />
+			<table class="params">
+				<thead>
+					<tr>
+						 <th class="last">Method Summary</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#canProcess">canProcess</a><span class="signature">()</span><span class="type-signature"></span>
+
+
+<br />
+								Checks if this keyboard can process the characters one by one. Always returns true. This should return true in order for<a href="pramukhime.html">PramukhIME</a> to call <a href="pramukhindic.html#process">PramukhIndic#process</a> function
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getHelp">getHelp</a><span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets the detailed help html file name.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getHelpImage">getHelpImage</a><span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets the help image file name.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getKeyboardName">getKeyboardName</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets the Keyboard layout name assigned by the developer. This name must be unique across all the keyboards
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getLanguage">getLanguage</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets currently selected language name.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getLanguageCode">getLanguageCode</a><span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets the two letter language code
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getLanguages">getLanguages</a><span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span>
+
+
+<br />
+								Gets an array of supported language name.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getSettings">getSettings</a><span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {Array.&lt;Settings>}</span>
+
+
+<br />
+								Gets a settings of the given language. If the language is not provided, it gives the settings of the currently selected language. If you want to get the settings of all the languages, pass 'all' as the parameter. Regardless of the parameter value, the 0th index element in the output array will containsthe digitInEnglish property. Based on the parameter value, rest of the array element will contains respective language's settings
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#getVersion">getVersion</a><span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+
+
+<br />
+								Gets the version number of this keyboard
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#hasHelp">hasHelp</a><span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
+
+
+<br />
+								Checks if this keyboard supports help. It always returns true
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#hasSettings">hasSettings</a><span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
+
+
+<br />
+								Checks if the keyboard has settings. It always returns true
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#process">process</a><span class="signature">(key, ctrl, alt)</span><span class="type-signature"> &rarr; {ProcessOutput}</span>
+
+
+<br />
+								Processes the ASCII character and creates its equivalent Unicode character.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#reset">reset</a><span class="signature">()</span><span class="type-signature"></span>
+
+
+<br />
+								It resets the state of the object. This function should be called when the input is not continuous (i.e. arrow key pressed, another textbox focused)
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#resetSettings">resetSettings</a><span class="signature">()</span><span class="type-signature"></span>
+
+
+<br />
+								Resets all the settings for all the languages
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#setLanguage">setLanguage</a><span class="signature">(languageName)</span><span class="type-signature"></span>
+
+
+<br />
+								Sets the language. Language must be one of the supported language. If the provided language name is not supported,it will retain its previous selected language.
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#setSettings">setSettings</a><span class="signature">(settings)</span><span class="type-signature"></span>
+
+
+<br />
+								Sets the settings of the language(s).
+							</td>
+						</tr>
+					
+						<tr>
+							<td><span class="type-signature"></span><a href="#supports">supports</a><span class="signature">(languageName<span class="signature-attributes">non-null</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+
+
+<br />
+								Checks if the language is supported or not.
+							</td>
+						</tr>
+					
+					
+				</tbody>
+			</table>
+			<br />
+			<table class="params">
+				<thead>
+					<tr>
+						 <th class="last">Type Definition</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+						<tr>
+							<td><a href="#ProcessOutput">ProcessOutput</a>
+
+
+<br />
+								
+							</td>
+						</tr>
+					
+						<tr>
+							<td><a href="#Settings">Settings</a>
+
+
+<br />
+								digitInEnglish and advancedRule + advancedRuleValues are mutually exclusive properties. If the one is available, the other one will not be available
+							</td>
+						</tr>
+					
+					
+				</tbody>
+			</table>
+
+
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2><hr />
+    
+    <h4 class="name" id="PramukhIndic"><span class="type-signature"></span>new PramukhIndic<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">One of the supported language name. If the language is not supported or not provided, it will default to Hindi</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+		<hr />
+        
+            
+
+    
+    <h4 class="name" id="canProcess"><span class="type-signature"></span>canProcess<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Checks if this keyboard can process the characters one by one. Always returns true. This should return true in order for<a href="pramukhime.html">PramukhIME</a> to call <a href="pramukhindic.html#process">PramukhIndic#process</a> function
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getHelp"><span class="type-signature"></span>getHelp<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets the detailed help html file name.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If the languageName is not provided, currently selected language will be used</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#hasHelp">PramukhIndic#hasHelp</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    detailed help html file name
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic();// Output = pramukhindic-sanskrit.htmldocument.getElementById('detailed_help_link').href = "help/" + kb.getHelp();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getHelpImage"><span class="type-signature"></span>getHelpImage<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets the help image file name.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If the languageName is not provided, currently selected language will be used</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#hasHelp">PramukhIndic#hasHelp</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Help image file name
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic();// Output = pramukhindic-sanskrit.pngdocument.getElementById('detailed_help_link').href = "img/" + kb.getHelp();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getKeyboardName"><span class="type-signature"></span>getKeyboardName<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets the Keyboard layout name assigned by the developer. This name must be unique across all the keyboards
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Keyboard name
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic();// output = "pramukhindic"var output = kb.getKeyboardName();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getLanguage"><span class="type-signature"></span>getLanguage<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets currently selected language name.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#setLanguage">PramukhIndic#setLanguage</a>, <a href="pramukhindic.html#getLanguages">PramukhIndic#getLanguages</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Language name.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('sanskrit');// output = "sanskrit"var output = kb.getLanguage();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getLanguageCode"><span class="type-signature"></span>getLanguageCode<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets the two letter language code
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">If the languageName is not provided, currently selected language will be used</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#getLanguages">PramukhIndic#getLanguages</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Two letter language code
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('sanskrit');// output = "SA"var output = kb.getLanguageCode();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getLanguages"><span class="type-signature"></span>getLanguages<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;string>}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets an array of supported language name.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#supports">PramukhIndic#supports</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    language name.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('sanskrit');var output = kb.getLanguages().length + " languages are supported by this keyboard";</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getSettings"><span class="type-signature"></span>getSettings<span class="signature">(languageName<span class="signature-attributes">nullable</span>)</span><span class="type-signature"> &rarr; {Array.&lt;Settings>}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets a settings of the given language. If the language is not provided, it gives the settings of the currently selected language. If you want to get the settings of all the languages, pass 'all' as the parameter. Regardless of the parameter value, the 0th index element in the output array will containsthe digitInEnglish property. Based on the parameter value, rest of the array element will contains respective language's settings
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+                    &lt;nullable><br>
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">null, 'all' or one of the supported language name</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#setSettings">PramukhIndic#setSettings</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    setting - setting object
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Settings></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('hindi');// Get the settings for currently selected language i.e. Hindivar settings = kb.getSettings();var output = 'For all languages, Digit In English = ' + settings[0] +	', For ' + settings[1].language + ' , current typing rule=' + settings[1].advancedRule + 	', available typing rules=' + settings[1].advancedRuleValues.join(',');</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="getVersion"><span class="type-signature"></span>getVersion<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Gets the version number of this keyboard
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Version number
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="hasHelp"><span class="type-signature"></span>hasHelp<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Checks if this keyboard supports help. It always returns true
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="hasSettings"><span class="type-signature"></span>hasSettings<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Checks if the keyboard has settings. It always returns true
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="process"><span class="type-signature"></span>process<span class="signature">(key, ctrl, alt)</span><span class="type-signature"> &rarr; {ProcessOutput}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Processes the ASCII character and creates its equivalent Unicode character.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">key code of the character to process</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ctrl</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">If the Control key is currently pressed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>alt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">if the Alt key is currently pressed</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    result - Result object
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">ProcessOutput</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('hindi');// output.letterConsumed = false, output.removeCharacters = 0, output.unicodeText = "अ"var output = kb.process('a',false, false);</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="reset"><span class="type-signature"></span>reset<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    It resets the state of the object. This function should be called when the input is not continuous (i.e. arrow key pressed, another textbox focused)
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="resetSettings"><span class="type-signature"></span>resetSettings<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Resets all the settings for all the languages
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('hindi');var settings = [{language:'all', kb: 'pramukhindic', digitInEnglish: true},		{language:'hindi', kb: 'pramukhindic', advancedRule: 'panchamakshar'} ];// Sets the Digit in English = true for all languages and Typing Rule = Nasal Consonant for Hindikb.setSettings(settings);// resetting the settings will make the Digit in English = false for all languages and Typing Rule = Anusvar for Hindikb.resetSettings();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="setLanguage"><span class="type-signature"></span>setLanguage<span class="signature">(languageName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Sets the language. Language must be one of the supported language. If the provided language name is not supported,it will retain its previous selected language.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">One of the supported language name</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#supports">PramukhIndic#supports</a>, <a href="pramukhindic.html#getLanguage">PramukhIndic#getLanguage</a>, <a href="pramukhindic.html#getLanguages">PramukhIndic#getLanguages</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc">
+    
+        GeneralException if the language is not supported
+    
+    </div>
+
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// sets the language to Hindivar kb = new PramukhIndic('hindi');// output = 'hindi';var output = kb.getLanguage();// sets another languagekb.setLanguage('gujarati');// output = 'gujarati';output = kb.getLanguage();</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="setSettings"><span class="type-signature"></span>setSettings<span class="signature">(settings)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Sets the settings of the language(s).
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>settings</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Settings></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">settings.advancedRule and settings.digitInEnglish are mutually exclusive and	cannot be combined within one objects.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="pramukhindic.html#getSettings">PramukhIndic#getSettings</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+    <div class="param-desc">
+    
+        GeneralException if the settings parameter is not a valid array or Object.language is not a supported language
+    
+    </div>
+
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic('hindi');var settings = [{language:'all', kb: 'pramukhindic', digitInEnglish: true},		{language:'hindi', kb: 'pramukhindic', advancedRule: 'panchamakshar'} ];// Sets the Digit in English = true for all languages and Typing Rule = Nasal Consonant for Hindikb.setSettings(settings);</code></pre>
+
+
+<hr />
+
+        
+            
+
+    
+    <h4 class="name" id="supports"><span class="type-signature"></span>supports<span class="signature">(languageName<span class="signature-attributes">non-null</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+
+
+<div class="description">
+    Checks if the language is supported or not.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>languageName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Name of the language</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var kb = new PramukhIndic();// output = truevar output = kb.supports('sanskrit');// output = falseoutput = kb.supports('abc');</code></pre>
+
+
+<hr />
+
+        
+    
+
+    
+        <h3 class="subsection-title">Type Definitions</h3>
+		<hr />
+        
+                
+<h4 class="name" id="ProcessOutput">ProcessOutput</h4>
+
+
+
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>letterConsumed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">True if the character is consumed by this method, otherwise False. If the letter is not consumed,it is caller's responsibility to appropriately process the letter.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>removeCharacters</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Indicates how many previous characters to remove. This value is always greater than or equal to 0.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>unicodeText</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Text to append to the resultant text after removing characters.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<hr />
+
+            
+                
+<h4 class="name" id="Settings">Settings</h4>
+
+
+
+
+<div class="description">
+    digitInEnglish and advancedRule + advancedRuleValues are mutually exclusive properties. If the one is available, the other one will not be available
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>language</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Language name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>kb</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Keyboard name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>digitInEnglish</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Digit in English</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>advancedRule</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Currently selected advanced rule</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>advancedRuleValues</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">All available advanced rule values</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<hr />
+
+            
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h3>Classes</h3><ul><li><a href="pramukhime.html">PramukhIME</a></li><li><a href="pramukhindic.html">PramukhIndic</a></li></ul><h3>Events</h3><ul><li><a href="pramukhime.html#event:languagechange">languagechange</a></li><li><a href="pramukhime.html#event:settingschange">settingschange</a></li></ul>
+</nav>
+
+<br class="clear">
+
+</body>
+</html>
